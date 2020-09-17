@@ -6,7 +6,7 @@ import { ProductConsumer } from "../context";
 export default class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-primary px-sm-5">
+      <nav className="navbar navbar-expand-sm navbar-dark px-sm-5">
         <Link to="/">
           <img src={logo} alt="store" className="navbar-brand" />
         </Link>

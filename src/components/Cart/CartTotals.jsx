@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { ButtonContainer } from '../Button'
 
 export default function CartTotals({value}) {
     const { cartSubTotal, cartTax, cartTotal, clearCart } = value
@@ -35,6 +36,9 @@ export default function CartTotals({value}) {
                                 <i className='fas fa-rupee-sign'></i> {cartTotal}
                             </strong>
                         </h5>
+                        <ButtonContainer>
+                            Check Out
+                        </ButtonContainer>
                     </div>                
                 </div>
             </div>

@@ -7,8 +7,9 @@
 }
 body{
   font-family: 'Oswald',sans-serif !important;
-  background: var(--mainWhite) !important;
+  /* background: var(--mainWhite) !important; */
   color:var(--mainDark) !important;
+  background: linear-gradient(to left,#FF442B ,#FF933A);
 }
 
 .text-title{
