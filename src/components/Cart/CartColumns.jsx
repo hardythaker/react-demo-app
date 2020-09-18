@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function CartColumns() {
     return (
-        <div className="container-fluid text-center d-lg-block">
-            <div className="row">
+        <div className="container-fluid text-center d-none d-lg-block">
+            <div className="row pt-2" style={{background:"rgb(223, 219, 219)"}}>
                 <div className="col-10 mx-auto col-lg-2">
                     <p className="text-uppercase">Products</p>
                 </div>

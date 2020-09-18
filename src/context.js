@@ -7,7 +7,7 @@ const ProductConsumer = ProductContext.Consumer;
 class ProductProvider extends Component {
   state = {
     products: [],
-    detailProduct,
+    filteredProducts: [],
     cart: [],
     modalOpen: false,
     modalProduct: detailProduct,
@@ -28,7 +28,7 @@ class ProductProvider extends Component {
       tempProducts = [...tempProducts, singleItem];
     });
     this.setState(() => {
-      return { products: tempProducts };
+      return { products: tempProducts, filteredProducts: tempProducts };
     });
   };
   handleDetail = (id) => {
@@ -63,6 +63,17 @@ class ProductProvider extends Component {
         this.addTotals();
       }
     );
+  };
+  filterProducts = (c) => {
+    var tempProducts = [...this.state.products];
+    if(c !== "allproducts"){
+      tempProducts = tempProducts.filter((product) => product.type === c);
+    }
+    this.setState(() => {
+      return {
+        filteredProducts: [...tempProducts],
+      };
+    });
   };
   openModal = (id) => {
     const product = this.getItem(id);
@@ -99,10 +110,9 @@ class ProductProvider extends Component {
     const index = tempCart.indexOf(selectedPrduct);
     const product = tempCart[index];
     product.count -= 1;
-    if(product.count === 0){
+    if (product.count === 0) {
       this.removeItem(id);
-    }
-    else{
+    } else {
       product.total = product.count * product.price;
       this.setState(
         () => {
@@ -177,6 +187,7 @@ class ProductProvider extends Component {
           decreament: this.decreament,
           removeItem: this.removeItem,
           clearCart: this.clearCart,
+          filterProducts: this.filterProducts,
         }}
       >
         {this.props.children}

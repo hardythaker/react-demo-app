@@ -19,35 +19,46 @@ export default class Product extends Component {
                     value.handleDetail(id);
                   }}
                 >
-                  <Link to="/details">
-                    <img src={img} alt="Product" className="card-img-top"></img>
-                  </Link>
-                  <div className="d-flex justify-content-between">
-                    <h5 className="align-self-center mb-0">{title}</h5>
-                    <h5 className="text-blue font-italic mb-0">
-                      <span className="mr-1">
-                        <i className="fas fa-rupee-sign"></i> {price}
-                      </span>
-                    </h5>
+                  <div className="img-fluid">
+                    <Link to="/details">
+                      <img
+                        src={img}
+                        alt="Product"
+                        className="card-img-top"
+                      ></img>
+                    </Link>
                   </div>
-                </div>
-                <div className="card-footer d-flex justify-content-between m-auto">
-                  <button
-                    className="cart-btn btn"
-                    disabled={inCart ? true : false}
-                    onClick={() => {
-                      value.addToCart(id);
-                      value.openModal(id);
-                    }}
-                  >
-                    {inCart ? (
-                      <p className="text-capitalize mb-0" disabled>
-                        InCart
-                      </p>
-                    ) : (
-                      <i className="fas fa-cart-plus"> Add to Cart</i>
-                    )}
-                  </button>
+
+                  <div className="card-body">
+                    <div className="d-flex justify-content-between">
+                      <h5 className="align-self-center mb-0 card-title">
+                        {title}
+                      </h5>
+                      <h5 className="text-blue font-italic mb-0">
+                        <span className="mr-1">
+                          <i className="fas fa-rupee-sign"></i> {price}
+                        </span>
+                      </h5>
+                    </div>
+                    <div className="card-footer d-flex justify-content-between m-auto">
+                      <button
+                        className="cart-btn btn"
+                        disabled={inCart ? true : false}
+                        onClick={() => {
+                          value.addToCart(id);
+                          value.openModal(id);
+                        }}
+                      >
+                        {inCart ? (
+                          <p className="text-capitalize mb-0" disabled>
+                            InCart
+                          </p>
+                        ) : (
+                          <i className="fas fa-cart-plus"> Add to Cart</i>
+                        )}
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </React.Fragment>
             )}
@@ -72,6 +83,7 @@ const ProductWrapper = styled.div`
   .card {
     border-color: transparent;
     transition: all 0.3s linear;
+    height: 50vh;
   }
   .card-footer {
     background: transparent;
