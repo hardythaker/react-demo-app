@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CartItem({ item, value }) {
   const { id, title, img, price, total, count } = item;
-  const { increament, decreament, removeItem } = value;
+  const { increament, decreament, openConfirmDialoge } = value;
 
   return (
     <div className="row my-2 text-capitalize text-center">
@@ -44,17 +44,15 @@ export default function CartItem({ item, value }) {
         </div>
       </div>
       <div className="col-10 mx-auto col-lg-2">
-        <div className="cart-icon" onClick={()=>removeItem(id)}>
-            <i className="fas fa-trash"></i>
+        <div className="cart-icon" onClick={() => openConfirmDialoge(id)}>
+          <i className="fas fa-trash"></i>
         </div>
       </div>
       <div className="col-10 mx-auto col-lg-2">
         <strong>
           item total : <i className="fas fa-rupee-sign"> {total} </i>
-          
         </strong>
       </div>
-      
     </div>
   );
 }

@@ -11,6 +11,9 @@ class ProductProvider extends Component {
     cart: [],
     modalOpen: false,
     modalProduct: detailProduct,
+    confirmDialoge: false,
+    confirmProduct: detailProduct,
+    clearCartModal: false,
     cartSubTotal: 0,
     cartTax: 0,
     cartTotal: 0,
@@ -66,7 +69,7 @@ class ProductProvider extends Component {
   };
   filterProducts = (c) => {
     var tempProducts = [...this.state.products];
-    if(c !== "allproducts"){
+    if (c !== "allproducts") {
       tempProducts = tempProducts.filter((product) => product.type === c);
     }
     this.setState(() => {
@@ -84,6 +87,29 @@ class ProductProvider extends Component {
   closeModal = () => {
     this.setState(() => {
       return { modalOpen: false };
+    });
+  };
+  openConfirmDialoge = (id) => {
+    if (id != null) {
+      const product = this.getItem(id);
+      this.setState(() => {
+        return { confirmDialoge: true, confirmProduct: product };
+      });
+    }
+  };
+  closeConfirmDialoge = () => {
+    this.setState(() => {
+      return { confirmDialoge: false };
+    });
+  };
+  openClearCartModal = () => {
+    this.setState(() => {
+      return { clearCartModal: true };
+    });
+  };
+  closeClearCartModal = () => {
+    this.setState(() => {
+      return { clearCartModal: false };
     });
   };
   increament = (id) => {
@@ -188,6 +214,10 @@ class ProductProvider extends Component {
           removeItem: this.removeItem,
           clearCart: this.clearCart,
           filterProducts: this.filterProducts,
+          openConfirmDialoge: this.openConfirmDialoge,
+          closeConfirmDialoge: this.closeConfirmDialoge,
+          openClearCartModal: this.openClearCartModal,
+          closeClearCartModal: this.closeClearCartModal,
         }}
       >
         {this.props.children}

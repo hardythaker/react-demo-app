@@ -9,5 +9,7 @@
     "appService.zipIgnorePattern": [
         "node_modules{,/**}",
         ".vscode{,/**}"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/38744328-505f-4a52-ae00-a85b78f756f8/resourceGroups/cloud-shell-storage-centralindia/providers/Microsoft.Web/sites/demo-react-app",
+    "appService.deploySubpath": "."
 }

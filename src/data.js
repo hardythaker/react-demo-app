@@ -10,7 +10,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    type: "nuts"
+    type: "nuts",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    type: "nuts"
+    type: "nuts",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    type: "nuts"
+    type: "nuts",
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    type: "nuts"
+    type: "nuts",
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    type: "darkchocolate"
+    type: "darkchocolate",
   },
   {
     id: 6,
@@ -75,7 +75,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    type: "darkchocolate"
+    type: "darkchocolate",
   },
   {
     id: 7,
@@ -88,7 +88,7 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    type: "darkchocolate"
+    type: "darkchocolate",
   },
   {
     id: 8,
@@ -101,8 +101,8 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0,
-    type: "darkchocolate"
-  }
+    type: "darkchocolate",
+  },
 ];
 
 export const detailProduct = {
@@ -116,5 +116,5 @@ export const detailProduct = {
   inCart: false,
   count: 0,
   total: 0,
-  type: "nuts"
+  type: "nuts",
 };

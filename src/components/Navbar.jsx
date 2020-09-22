@@ -8,7 +8,10 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-sm navbar-light px-sm-5">
-        <div className="d-flex " style={{ background: "white", borderRadius: "2rem"}}>
+        <div
+          className="d-flex "
+          style={{ background: "white", borderRadius: "2rem" }}
+        >
           <ul className="navbar-nav align-items-center">
             <li className="navbar-brand mx-4 font-weight-bold">
               <Link to="/" className="nav-link">
